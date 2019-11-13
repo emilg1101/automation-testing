@@ -3,7 +3,8 @@ import org.junit.Before;
 import org.junit.Rule;
 import org.junit.Test;
 import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.firefox.FirefoxOptions;
+import org.openqa.selenium.remote.RemoteWebDriver;
 import org.openqa.selenium.support.ui.Select;
 import org.testcontainers.containers.BrowserWebDriverContainer;
 
@@ -12,14 +13,14 @@ import java.util.concurrent.TimeUnit;
 import static org.junit.Assert.fail;
 
 public class AuthTestCase {
-    private WebDriver driver;
+    private RemoteWebDriver driver;
     private StringBuffer verificationErrors = new StringBuffer();
 
     @Rule
-    public BrowserWebDriverContainer chrome = new BrowserWebDriverContainer();
+    public BrowserWebDriverContainer chrome = new BrowserWebDriverContainer().withCapabilities(new FirefoxOptions());
+
     @Before
     public void setUp() throws Exception {
-        // System.setProperty("webdriver.gecko.driver", "geckodriver.exe");
         driver = chrome.getWebDriver();
         driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
     }
