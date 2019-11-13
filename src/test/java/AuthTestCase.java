@@ -6,21 +6,17 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.Select;
 import org.testcontainers.containers.BrowserWebDriverContainer;
-import java.io.File;
 
 import java.util.concurrent.TimeUnit;
 
 import static org.junit.Assert.fail;
-import static org.testcontainers.containers.BrowserWebDriverContainer.VncRecordingMode.RECORD_ALL;
 
 public class AuthTestCase {
     private WebDriver driver;
-    private boolean acceptNextAlert = true;
     private StringBuffer verificationErrors = new StringBuffer();
 
     @Rule
-    public BrowserWebDriverContainer chrome = new BrowserWebDriverContainer()
-            .withRecordingMode(RECORD_ALL, new File("target"));
+    public BrowserWebDriverContainer chrome = new BrowserWebDriverContainer();
     @Before
     public void setUp() throws Exception {
         // System.setProperty("webdriver.gecko.driver", "geckodriver.exe");
