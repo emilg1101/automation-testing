@@ -23,11 +23,11 @@ public class AuthTestCase {
     public void setUp() throws Exception {
         driver = chrome.getWebDriver();
         driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+        driver.get("http://tutorialsninja.com/demo/index.php?route=account/login");
     }
 
     @Test
-    public void testTutorialsNinja() throws Exception {
-        driver.get("http://tutorialsninja.com/demo/index.php?route=account/login");
+    public void sign_in_test_case() {
         driver.findElement(By.id("input-email")).click();
         driver.findElement(By.id("input-email")).clear();
         driver.findElement(By.id("input-email")).sendKeys("example@example.com");
@@ -35,6 +35,10 @@ public class AuthTestCase {
         driver.findElement(By.id("input-password")).sendKeys("testtest");
         driver.findElement(By.xpath("(.//*[normalize-space(text()) and normalize-space(.)='Forgotten Password'])[1]/following::input[1]")).click();
         driver.findElement(By.xpath("(.//*[normalize-space(text()) and normalize-space(.)='Password'])[1]/following::a[1]")).click();
+    }
+
+    @Test
+    public void add_new_address_test_case() {
         driver.findElement(By.linkText("New Address")).click();
         driver.findElement(By.id("input-firstname")).click();
         driver.findElement(By.id("input-firstname")).clear();
@@ -56,6 +60,10 @@ public class AuthTestCase {
         driver.findElement(By.xpath("(.//*[normalize-space(text()) and normalize-space(.)='Region / State'])[1]/following::option[2]")).click();
         driver.findElement(By.xpath("(.//*[normalize-space(text()) and normalize-space(.)='Back'])[1]/following::input[1]")).click();
         driver.findElement(By.xpath("(.//*[normalize-space(text()) and normalize-space(.)='$ US Dollar'])[1]/following::span[2]")).click();
+    }
+
+    @Test
+    public void logout_test_case() {
         driver.findElement(By.linkText("Logout")).click();
     }
 
