@@ -1,10 +1,7 @@
 import org.junit.After;
 import org.junit.Before;
-import org.junit.Rule;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
-import org.openqa.selenium.firefox.FirefoxOptions;
-import org.testcontainers.containers.BrowserWebDriverContainer;
 
 import java.util.concurrent.TimeUnit;
 
