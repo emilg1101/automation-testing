@@ -6,5 +6,7 @@ import org.testcontainers.containers.BrowserWebDriverContainer
 
 class ContainerWebDriverFactory : DriverFactory.Factory {
 
-    override fun build(): WebDriver = BrowserWebDriverContainer<Nothing>().withCapabilities(FirefoxOptions())
+    override fun build(): WebDriver = BrowserWebDriverContainer<Nothing>().apply {
+        withCapabilities(FirefoxOptions())
+    }.webDriver
 }
