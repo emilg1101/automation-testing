@@ -3,7 +3,7 @@
   <component name="AutoImportedSourceRoots">
     <option name="directories">
       <list>
-        <option value="src/test/java" />
+        <option value="src/kotlinTest/kotlin" />
         <option value="src/test/kotlin" />
       </list>
     </option>
