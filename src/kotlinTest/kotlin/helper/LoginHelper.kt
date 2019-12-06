@@ -8,7 +8,7 @@ class LoginHelper(driver: WebDriver) : BaseHelper(driver) {
 
     private val data = LoginData("example@example.com", "testtest")
 
-    fun login() = with(driver){
+    fun login() = with(driver) {
         findElement(By.id("input-email")).click()
         findElement(By.id("input-email")).clear()
         findElement(By.id("input-email")).sendKeys(data.email)
@@ -21,5 +21,9 @@ class LoginHelper(driver: WebDriver) : BaseHelper(driver) {
     fun logout() = with(driver) {
         Thread.sleep(1000)
         findElement(By.linkText("Logout")).click()
+    }
+
+    fun getLoginData(): String {
+        return driver.findElement(By.xpath("//input[@value='Login']")).getAttribute("value")
     }
 }

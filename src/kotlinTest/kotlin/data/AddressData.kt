@@ -7,4 +7,8 @@ data class AddressData(
         val city: String,
         val postcode: String,
         val region: String
-)
+) {
+    override fun toString(): String {
+        return "$firstName $lastName\n$addressOne\n$city $postcode\n$region\nUnited Kingdom"
+    }
+}

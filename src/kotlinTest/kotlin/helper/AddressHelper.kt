@@ -7,7 +7,7 @@ import org.openqa.selenium.support.ui.Select
 
 class AddressHelper(driver: WebDriver) : BaseHelper(driver) {
 
-    private val data = AddressData(
+    val data = AddressData(
             "Test",
             "Testovich",
             "Smth address",
@@ -36,7 +36,10 @@ class AddressHelper(driver: WebDriver) : BaseHelper(driver) {
         findElement(By.id("input-zone")).click()
         Select(findElement(By.id("input-zone"))).selectByVisibleText(data.region)
         findElement(By.xpath("(.//*[normalize-space(text()) and normalize-space(.)='Region / State'])[1]/following::option[2]")).click()
-        findElement(By.xpath("(.//*[normalize-space(text()) and normalize-space(.)='Back'])[1]/following::input[1]")).click()
-        findElement(By.xpath("(.//*[normalize-space(text()) and normalize-space(.)='$ US Dollar'])[1]/following::span[2]")).click()
+        findElement(By.xpath("//input[@value='Continue']")).click()
+    }
+
+    fun getAddedAddress(): String {
+        return driver.findElement(By.xpath("(.//*[normalize-space(text()) and normalize-space(.)='Address Book Entries'])[1]/following::td[1]")).text
     }
 }

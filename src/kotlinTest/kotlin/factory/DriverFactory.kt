@@ -4,7 +4,7 @@ import org.openqa.selenium.WebDriver
 
 object DriverFactory {
 
-    fun getFactory(): Factory = ContainerWebDriverFactory() // FirefoxWebDriverFactory()
+    fun getFactory(): Factory = FirefoxWebDriverFactory() // FirefoxWebDriverFactory()
 
     interface Factory {
         fun build(): WebDriver

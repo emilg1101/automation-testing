@@ -6,15 +6,13 @@ import org.junit.Before
 
 abstract class BaseTest {
 
-    lateinit var manager: AppManager
+    var manager: AppManager = AppManager.getInstance()
 
     @Before
     open fun setUp() {
-        manager = AppManager()
     }
 
     @After
     open fun afterTest() {
-        manager.stop()
     }
 }
