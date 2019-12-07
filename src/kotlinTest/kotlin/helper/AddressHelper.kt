@@ -7,16 +7,16 @@ import org.openqa.selenium.support.ui.Select
 
 class AddressHelper(driver: WebDriver) : BaseHelper(driver) {
 
-    val data = AddressData(
+    /*val data = AddressData(
             "Test",
             "Testovich",
             "Smth address",
             "City",
             "123456",
             "Aberdeen"
-    )
+    )*/
 
-    fun addAddress() = with(driver) {
+    fun addAddress(data: AddressData) = with(driver) {
         findElement(By.linkText("New Address")).click()
         findElement(By.id("input-firstname")).click()
         findElement(By.id("input-firstname")).clear()
@@ -41,5 +41,9 @@ class AddressHelper(driver: WebDriver) : BaseHelper(driver) {
 
     fun getAddedAddress(): String {
         return driver.findElement(By.xpath("(.//*[normalize-space(text()) and normalize-space(.)='Address Book Entries'])[1]/following::td[1]")).text
+    }
+
+    fun deleteAddress() = with(driver) {
+        driver.findElement(By.linkText("Delete")).click()
     }
 }
