@@ -7,15 +7,6 @@ import org.openqa.selenium.support.ui.Select
 
 class AddressHelper(driver: WebDriver) : BaseHelper(driver) {
 
-    /*val data = AddressData(
-            "Test",
-            "Testovich",
-            "Smth address",
-            "City",
-            "123456",
-            "Aberdeen"
-    )*/
-
     fun addAddress(data: AddressData) = with(driver) {
         findElement(By.linkText("New Address")).click()
         findElement(By.id("input-firstname")).click()

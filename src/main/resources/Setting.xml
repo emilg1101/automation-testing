@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<Setting>
+    <Email>example2@example.com</Email>
+    <Password>testtest</Password>
+    <BaseUrl>http://tutorialsninja.com/demo/index.php?route=</BaseUrl>
+</Setting>

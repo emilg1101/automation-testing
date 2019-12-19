@@ -11,4 +11,8 @@ class NavigationHelper(driver: WebDriver, private val baseUrl: String) : BaseHel
     fun openEditAccountPage() = with(driver) {
         navigate().to("${baseUrl}account/edit")
     }
+
+    fun openAddressBookPage() = with(driver) {
+        navigate().to("${baseUrl}account/address")
+    }
 }

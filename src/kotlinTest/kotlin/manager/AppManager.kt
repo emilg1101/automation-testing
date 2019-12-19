@@ -1,5 +1,6 @@
 package kotlinTest.manager
 
+import kotlinTest.Settings
 import kotlinTest.factory.DriverFactory
 import kotlinTest.helper.AccountHelper
 import kotlinTest.helper.AddressHelper
@@ -11,7 +12,7 @@ import kotlin.concurrent.getOrSet
 class AppManager {
 
     private val driver: WebDriver = DriverFactory.getFactory().build()
-    private val baseUrl: String = "http://tutorialsninja.com/demo/index.php?route="
+    private val baseUrl: String = Settings.data.baseUrl
 
     val navigation: NavigationHelper = NavigationHelper(driver, baseUrl)
     val login: LoginHelper = LoginHelper(driver)

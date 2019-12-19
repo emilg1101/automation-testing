@@ -9,7 +9,7 @@ class AccountHelper(driver: WebDriver) : BaseHelper(driver) {
     val data = AccountData(
             "Testtesttest",
             "NoSecondName",
-            "example@example.com",
+            "example2@example.com",
             "1357924680"
     )
 

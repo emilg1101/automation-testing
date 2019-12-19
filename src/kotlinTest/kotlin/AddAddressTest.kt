@@ -11,7 +11,7 @@ import java.io.File
 import java.lang.Exception
 
 @RunWith(value = Parameterized::class)
-class AddAddressTest(val data: AddressData) : BaseTest() {
+class AddAddressTest(val data: AddressData) : AuthBase() {
 
     companion object {
 
@@ -36,13 +36,10 @@ class AddAddressTest(val data: AddressData) : BaseTest() {
 
     @Test
     fun sign_in_add_address_logout_test_case() {
-        manager.navigation.openLoginPage()
-        manager.login.login()
+        manager.navigation.openAddressBookPage()
         manager.address.addAddress(data)
         val addedAddress = manager.address.getAddedAddress()
         manager.address.deleteAddress()
-        manager.login.logout()
-        manager.navigation.openLoginPage()
         Assert.assertEquals(data.toString(), addedAddress)
     }
 }
